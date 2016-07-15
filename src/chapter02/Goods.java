@@ -1,7 +1,7 @@
 package chapter02;
 
 public class Goods {
-	public static int countOfGoods;
+	private static int countOfGoods;
 	private String name;
 	private int price;
 	private int countStock;
@@ -14,9 +14,16 @@ public class Goods {
 		return price;
 	}
 	public Goods(){
+		countOfGoods++;
 		
 	}
+	public static int getCountOfGoods(){
+		return countOfGoods;
+	}
+
 	public Goods(String name,int price,int countStock,int countSold){
+		Goods.countOfGoods++;
+		
 		this.name = name;
 		this.price=price;
 		this.countStock=countStock;
